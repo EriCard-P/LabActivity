@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] hotel = new int[7][5];
+        Scanner sc = new Scanner(System.in);
+        int choice = 0;
+
+        while (choice != 4) {
+            System.out.println("\n=== HOTEL RESERVATION SYSTEM ===");
+            System.out.println("1. View Rooms");
+            System.out.println("2. Check In");
+            System.out.println("3. Check Out");
+            System.out.println("4. Exit");
+            System.out.print("Enter choice: ");
+            choice = sc.nextInt();
+
+            if (choice == 1) {
+                for (int f = 6; f >= 0; f--) {
+                    System.out.print("Floor " + (f + 1) + ": ");
+                    for (int r = 0; r < 5; r++) {
+                        System.out.print("[" + hotel[f][r] + "]");
+                    }
+                    System.out.println();
+                }
+            } else if (choice == 2) {
+                System.out.print("Enter floor (1-7): ");
+                int f = sc.nextInt() - 1;
+                System.out.print("Enter room (1-5): ");
+                int r = sc.nextInt() - 1;
+
+                if (f >= 0 && f < 7 && r >= 0 && r < 5) {
+                    if (hotel[f][r] == 0) {
+                        hotel[f][r] = 1;
+                        System.out.println("Check-in successful!");
+                    } else {
+                        System.out.println("Room already occupied");
+                    }
+                } else {
+                    System.out.println("Invalid floor/room selection.");
+                }
+            } else if (choice == 3) {
+                System.out.print("Enter floor (1-7): ");
+                int f = sc.nextInt() - 1;
+                System.out.print("Enter room (1-5): ");
+                int r = sc.nextInt() - 1;
+
+                if (f >= 0 && f < 7 && r >= 0 && r < 5) {
+                    if (hotel[f][r] == 1) {
+                        hotel[f][r] = 0;
+                        System.out.println("Check-out successful!");
+                    } else {
+                        System.out.println("Room already empty");
+                    }
+                } else {
+                    System.out.println("Invalid floor/room selection.");
+                }
+            } else if (choice == 4) {
+                System.out.println("Exiting program...");
+            } else {
+                System.out.println("Invalid option. Try again.");
+            }
+        }
+        sc.close();
+    }
+}
