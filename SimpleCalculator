@@ -1,0 +1,58 @@
+print("Simple Calculator")
+print("MENU")
+print("1.Addition")
+print("2.Subtraction")
+print("3.Multiplication")
+print("4.Division")
+print("5.Modulo")
+
+while True:
+  op = int(input("Select operation: "))
+  if(op > 5):
+      print("Invalid Input")
+  else: 
+      break
+    
+
+if(op ==1):
+    no1 = int(input("Number: "))
+    no2 = int(input("Number: "))
+    result = no1 + no2
+    print(f"Result: {no1} + {no2} = {result}")
+elif(op ==2):
+    no1 = int(input("Number: "))
+    no2 = int(input("Number: "))
+    result = no1 - no2
+    print(f"Result: {no1} - {no2} = {result}")
+elif(op ==3):
+    no1 = int(input("Number: "))
+    no2 = int(input("Number: "))
+    result = no1 * no2
+    print(f"Result: {no1} x {no2} = {result}")
+elif(op ==4):
+    no1 = int(input("Number: "))
+    no2 = int(input("Number: "))
+    result = no1 / no2
+    print(f"Result: {no1} / {no2} = {result}")
+elif(op ==5):
+    no1 = int(input("Number: "))
+    no2 = int(input("Number: "))
+    result = no1 % no2
+    print(f"Result: {no1} % {no2} = {result}")
+else:
+    print("Invalid Selection")
+
+
+
+    
+
+
+
+
+    
+   
+   
+   
+   
+   
+   
